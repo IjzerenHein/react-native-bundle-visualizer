@@ -8,7 +8,7 @@ Uses the awesome [webpack-visualizer](https://github.com/chrisbateman/webpack-vi
 
 ## Purpose
 
-Sometimes, importing a single javascript library can drastically increase your bundle size. This library helps you to identify such a library, so you can keep the bundle size low and loading times fast.
+Sometimes, importing a single javascript library can drastically increase your bundle size. This package helps you to identify such a library, so you can keep the bundle size low and loading times fast.
 
 ## Usage
 
