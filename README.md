@@ -37,5 +37,5 @@ The sizes reported are an indication rather than the exact byte size in your bun
 
 ## License
 
-[MIT]([./LICENSE.txt])
+[MIT](./LICENSE.txt)
 
