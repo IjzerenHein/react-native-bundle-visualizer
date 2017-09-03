@@ -15,12 +15,15 @@ Sometimes, importing a single javascript library can drastically increase your b
 Install as a dev dependency:
 
 	yarn add --dev react-native-bundle-visualizer
-	or
-	npm i --save-dev react-native-bundle-visualizer
 	
 And run it:
 
-	$ react-native-bundle-visualizer
+	yarn run react-native-bundle-visualizer
+
+*or when using npm:*
+
+	npm install --save-dev react-native-bundle-visualizer
+	./node_modules/.bin/react-native-bundle-visualizer
 
 ### Gitignore output files
 
