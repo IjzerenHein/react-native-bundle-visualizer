@@ -31,11 +31,12 @@ And run it:
 
 ### Gitignore output files
 
-Additionally, add the haul generated `dist` and `.happypack` folders to your `.gitignore` file:
+Additionally, add the haul generated files & folders to your `.gitignore` file:
 
 ```
 dist/
 .happypack/
+haul-debug.log
 ```
 
 ## Disclaimer
