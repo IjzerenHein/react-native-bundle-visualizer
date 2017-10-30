@@ -12,7 +12,10 @@ Sometimes, importing a single javascript library can drastically increase your b
 
 ## Usage
 
-**Make sure you have node 8 or higher installed.**
+Requirements:
+
+- Make sure you have **node 8 or higher** installed
+- For react-native 0.48.x or lower, use react-native-bundle-visualizer@1.1.0
 
 Install as a dev dependency:
 
@@ -26,8 +29,6 @@ And run it:
 
 	npm install --save-dev react-native-bundle-visualizer
 	./node_modules/.bin/react-native-bundle-visualizer
-
-*requires node 8 or higher*
 
 ### Gitignore output files
 

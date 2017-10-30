@@ -2,7 +2,7 @@ const Visualizer = require('webpack-visualizer-plugin');
 
 module.exports = ({platform}, {module, plugins}) => {
 	return {
-		entry: `./index.${platform}.js`,
+		entry: `./index.js`,
 		module: Object.assign(
 			{},
 			module,
