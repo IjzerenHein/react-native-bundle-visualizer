@@ -1,8 +1,11 @@
 const Visualizer = require('webpack-visualizer-plugin');
+const { getEntryPoint } = require('./get-entry-point');
+
+const entry = getEntryPoint();
 
 module.exports = ({platform}, {module, plugins}) => {
 	return {
-		entry: `./index.js`,
+		entry,
 		module: Object.assign(
 			{},
 			module,
