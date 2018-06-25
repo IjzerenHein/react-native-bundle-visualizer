@@ -35,8 +35,8 @@ And run it:
 Additionally, add the haul generated files & folders to your `.gitignore` file:
 
 ```
-dist/
-.happypack/
+index.ios.bundle
+index.ios.bundle.map
 haul-debug.log
 ```
 
