@@ -8,5 +8,5 @@ fi
 
 ./node_modules/.bin/haul bundle --config $CONFIG_FILE --platform ios
 if [ $? -eq 0 ]; then
-	open ./dist/stats.html
+	open ./stats.html
 fi
