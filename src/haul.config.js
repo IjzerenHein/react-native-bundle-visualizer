@@ -8,6 +8,7 @@ export default {
       entry: getEntryPoint(),
     })(env);
 
+    config.module.rules[1].exclude = /node_modules(?!.*[\/\\](react|@react-navigation|@react-native-community|@expo|pretty-format|haul|metro))/;
     config.plugins.push(new Visualizer());
 
     return config;
