@@ -1,6 +1,6 @@
 {
   "name": "react-native-bundle-visualizer",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "See what's inside your react-native bundle",
   "author": "IjzerenHein <hrutjes@gmail.com>",
   "keywords": [
