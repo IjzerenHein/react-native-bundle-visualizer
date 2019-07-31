@@ -17,7 +17,7 @@
   "bugs": "https://github.com/IjzerenHein/react-native-bundle-visualizer/issues",
   "license": "MIT",
   "dependencies": {
-    "haul": "^1.0.0-rc.14",
+    "haul": "^1.0.0-rc.15",
     "react-dom": "^16.8.4",
     "react-hot-loader": "^4.8.0",
     "webpack-visualizer-plugin": "^0.1.11"
