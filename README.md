@@ -1,5 +1,7 @@
 # react-native-bundle-visualizer
 
+**Version 2 is in the works which uses output from the Metro bundler and has a new User Interface. [Check it out here](https://github.com/IjzerenHein/react-native-bundle-visualizer/tree/v2)**
+
 See what's inside of your react-native bundle 📦
 
 ![bundle-visualizer-animation](./react-native-bundle-visualizer.gif)
@@ -16,9 +18,9 @@ Sometimes, importing a single javascript library can drastically increase your b
 
 Depending on your react-native version, install the appropriate package as a dev dependency:
 
-| RN version  | Install react-native-bundle-visualizer |
-|-------------|------------|
-| >= 0.57     | `yarn add --dev react-native-bundle-visualizer` | 
+| RN version  | Install react-native-bundle-visualizer                |
+| ----------- | ----------------------------------------------------- |
+| >= 0.57     | `yarn add --dev react-native-bundle-visualizer`       |
 | 0.49 - 0.56 | `yarn add --dev react-native-bundle-visualizer@1.3.5` |
 | <= 0.48     | `yarn add --dev react-native-bundle-visualizer@1.1.0` |
 	
