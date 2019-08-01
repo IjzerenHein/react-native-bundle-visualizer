@@ -2,9 +2,9 @@
 
 See what's inside of your react-native bundle 📦
 
-![bundle-visualizer-animation](./react-native-bundle-visualizer.gif)
+![bundle-visualizer-animation](./react-native-bundle-visualizer2.gif)
 
-Uses the awesome [webpack-visualizer](https://github.com/chrisbateman/webpack-visualizer) and [haul](https://github.com/callstack-io/haul) bundler.
+Uses the awesome [source-map-explorer](https://github.com/danvk/source-map-explorer) to visualize the output of the [Metro bundler](https://github.com/facebook/metro).
 
 ## Purpose
 
@@ -12,15 +12,9 @@ Sometimes, importing a single javascript library can drastically increase your b
 
 ## Usage
 
-*Make sure you have node 8 or higher installed.*
+Install as a dev-dependency:
 
-Depending on your react-native version, install the appropriate package as a dev dependency:
-
-| RN version  | Install react-native-bundle-visualizer |
-|-------------|------------|
-| >= 0.57     | `yarn add --dev react-native-bundle-visualizer` | 
-| 0.49 - 0.56 | `yarn add --dev react-native-bundle-visualizer@1.3.5` |
-| <= 0.48     | `yarn add --dev react-native-bundle-visualizer@1.1.0` |
+`yarn add --dev react-native-bundle-visualizer`
 	
 And run it:
 
@@ -31,22 +25,13 @@ And run it:
 	npm install --save-dev react-native-bundle-visualizer
 	./node_modules/.bin/react-native-bundle-visualizer
 
-### Gitignore output files
 
-Additionally, add the haul generated files & folders to your `.gitignore` file:
+## Usage with older react-native versions and the Haul bundler
 
-```
-# Haul bundler
-/assets
-stats.html
-index.ios.bundle
-index.ios.bundle.map
-haul-debug.log
-```
+As of `react-native-bundle-visualizer` version 2.x, the direct output of the [Metro bundler](https://github.com/facebook/metro) is visualized using the [source-map-explorer](https://github.com/danvk/source-map-explorer).
 
-## Disclaimer
+Prior to version 2, the Haul bundler was used which used Webpack. If you are having problems visualizing the output for older react-native versions, or you want to explicitly use the Haul bundler, [please check out the V1 documentation]('./README_v1.md).
 
-The sizes reported are an indication rather than the exact byte size in your bundle. This is because the Haul packager returns different bundles compared to the react-native Metro bundler. Also, due to limitations in webpack's stats, the "actual" (minified) numbers reported here are approximate, but they should be pretty close.
 
 ## License
 
