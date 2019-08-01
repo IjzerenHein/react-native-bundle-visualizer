@@ -28,7 +28,7 @@ And run it:
 
 ## Command line arguments
 
-All command-line arguments are optional.
+All command-line arguments are optional. By default a production build will be created for the `ios` platform.
 
 | Option          | Description                                        | Example                           |
 | --------------- | -------------------------------------------------- | --------------------------------- |
