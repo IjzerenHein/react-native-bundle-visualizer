@@ -1,4 +1,4 @@
-# react-native-bundle-visualizer
+# react-native-bundle-visualizer (legacy 1.x version)
 
 See what's inside of your react-native bundle 📦
 
