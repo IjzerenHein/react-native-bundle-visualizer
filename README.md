@@ -26,6 +26,20 @@ And run it:
 	./node_modules/.bin/react-native-bundle-visualizer
 
 
+## Command line arguments
+
+All command-line arguments are optional.
+
+| Option          | Description                                        | Example                           |
+| --------------- | -------------------------------------------------- | --------------------------------- |
+| `platform`      | Platform to build (default is **ios**)             | `--platform android`              |
+| `dev`           | Dev or production build (default is **false**)     | `--dev false`                     |
+| `entry-file`    | Entry-file (when omitted tries to auto-resolve it) | `--entry-file ./index.android.js` |
+| `bundle-output` | Output bundle-file (default is **tmp**)            | `--bundle-output ./myapp.bundle`  |
+
+
+
+
 ## Usage with older react-native versions and the Haul bundler
 
 As of `react-native-bundle-visualizer` version 2.x, the direct output of the [Metro bundler](https://github.com/facebook/metro) is visualized using the [source-map-explorer](https://github.com/danvk/source-map-explorer).
