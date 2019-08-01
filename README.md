@@ -14,7 +14,7 @@ Sometimes, importing a single javascript library can drastically increase your b
 
 Install as a dev-dependency:
 
-`yarn add --dev react-native-bundle-visualizer`
+`yarn add --dev react-native-bundle-visualizer@next`
 	
 And run it:
 
