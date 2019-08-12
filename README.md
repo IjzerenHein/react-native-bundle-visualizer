@@ -12,7 +12,9 @@ Sometimes, importing a single javascript library can drastically increase your b
 
 ## Usage
 
-Install as a dev-dependency:
+`npx react-native-bundle-visualizer@next`
+
+### Or install as a dev-dependency
 
 `yarn add --dev react-native-bundle-visualizer@next`
 	
@@ -30,12 +32,13 @@ And run it:
 
 All command-line arguments are optional. By default a production build will be created for the `ios` platform.
 
-| Option          | Description                                        | Example                           |
-| --------------- | -------------------------------------------------- | --------------------------------- |
-| `platform`      | Platform to build (default is **ios**)             | `--platform android`              |
-| `dev`           | Dev or production build (default is **false**)     | `--dev false`                     |
-| `entry-file`    | Entry-file (when omitted tries to auto-resolve it) | `--entry-file ./index.android.js` |
-| `bundle-output` | Output bundle-file (default is **tmp**)            | `--bundle-output ./myapp.bundle`  |
+| Option          | Description                                                   | Example                           |
+| --------------- | ------------------------------------------------------------- | --------------------------------- |
+| `platform`      | Platform to build (default is **ios**)                        | `--platform android`              |
+| `dev`           | Dev or production build (default is **false**)                | `--dev false`                     |
+| `entry-file`    | Entry-file (when omitted tries to auto-resolve it)            | `--entry-file ./index.android.js` |
+| `bundle-output` | Output bundle-file (default is **tmp**)                       | `--bundle-output ./myapp.bundle`  |
+| `verbose`       | Dumps additional output to the console (default is **false**) | `--verbose`                       |
 
 
 

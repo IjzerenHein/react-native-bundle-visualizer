@@ -18,8 +18,11 @@
   "bugs": "https://github.com/IjzerenHein/react-native-bundle-visualizer/issues",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^2.4.2",
     "execa": "^2.0.3",
     "minimist": "^1.2.0",
+    "open": "^6.4.0",
+    "rimraf": "^2.6.3",
     "source-map-explorer": "^2.0.1"
   }
 }
