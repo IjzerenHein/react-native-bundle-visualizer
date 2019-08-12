@@ -39,10 +39,16 @@ const bundleOutput =
 const bundleOutputSourceMap = bundleOutput + '.map';
 const bundleOutputExplorerHTML = tmpDir + '/output/explorer.html';
 
-// Make sure output dir exists
+// Make sure the temp dir exists
 if (!fs.existsSync(baseDir)) fs.mkdirSync(baseDir);
-if (fs.existsSync(tmpDir)) rimraf.sync(tmpDir);
-fs.mkdirSync(tmpDir);
+if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir);
+
+// Try to obtain the previous file size
+let prevBundleSize;
+if (fs.existsSync(bundleOutput)) {
+  const stats = fs.statSync(bundleOutput);
+  prevBundleSize = stats.size;
+}
 
 // Bundle
 console.log(chalk.green.bold('Generating bundle...'));
@@ -65,14 +71,35 @@ bundlePromise.stdout.pipe(process.stdout);
 bundlePromise
   .then(
     () => {
+      // Log bundle-size
       const stats = fs.statSync(bundleOutput);
+
+      // Log increase or decrease since last run
+      let deltaSuffix = '';
+      if (prevBundleSize) {
+        const delta = stats.size - prevBundleSize;
+        if (delta > 0) {
+          deltaSuffix = chalk.yellow(
+            ' (+++ has increased with ' + delta + ' bytes since last run)'
+          );
+        } else if (delta < 0) {
+          deltaSuffix = chalk.green.bold(
+            ' (--- has decreased with ' + (0 - delta) + ' bytes since last run)'
+          );
+        } else {
+          deltaSuffix = chalk.green(' (unchanged since last run)');
+        }
+      }
       console.log(
         chalk.green.bold(
           'Bundle is ' +
-            Math.round((stats.size / (1024 * 1024)) * 10) / 10 +
+            Math.round((stats.size / (1024 * 1024)) * 100) / 100 +
             ' MB in size'
-        )
+        ) + deltaSuffix
       );
+
+      // Make sure the explorer output dir is removed
+      if (fs.existsSync(tmpDir + '/output')) rimraf.sync(tmpDir + '/output');
       return explore(
         {
           code: bundleOutput,
