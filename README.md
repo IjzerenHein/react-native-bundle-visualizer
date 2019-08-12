@@ -39,8 +39,7 @@ All command-line arguments are optional. By default a production build will be c
 | `entry-file`    | Entry-file (when omitted tries to auto-resolve it)            | `--entry-file ./index.android.js` |
 | `bundle-output` | Output bundle-file (default is **tmp**)                       | `--bundle-output ./myapp.bundle`  |
 | `verbose`       | Dumps additional output to the console (default is **false**) | `--verbose`                       |
-
-
+| `reset-cache`   | Removes cached react-native files (default is **false**)      | `--reset-cache`                   |
 
 
 ## Usage with older react-native versions and the Haul bundler

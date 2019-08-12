@@ -34,6 +34,7 @@ const entryFile = argv['entry-file'] || getEntryPoint();
 const platform = argv.platform || 'ios';
 const dev = argv.dev || false;
 const verbose = argv.verbose || false;
+const resetCache = argv['reset-cache'] || false;
 const bundleOutput =
   argv['bundle-output'] || tmpDir + '/' + platform + '.bundle';
 const bundleOutputSourceMap = bundleOutput + '.map';
@@ -52,7 +53,7 @@ if (fs.existsSync(bundleOutput)) {
 
 // Bundle
 console.log(chalk.green.bold('Generating bundle...'));
-const bundlePromise = execa('./node_modules/.bin/react-native', [
+const commands = [
   'bundle',
   '--platform',
   platform,
@@ -64,7 +65,12 @@ const bundlePromise = execa('./node_modules/.bin/react-native', [
   bundleOutput,
   '--sourcemap-output',
   bundleOutputSourceMap
-]);
+];
+if (resetCache) {
+  commands.push('--reset-cache');
+  commands.push(resetCache);
+}
+const bundlePromise = execa('./node_modules/.bin/react-native', commands);
 bundlePromise.stdout.pipe(process.stdout);
 
 // Upon bundle completion, run `source-map-explorer`
