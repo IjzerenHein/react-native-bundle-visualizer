@@ -19,10 +19,10 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
-    "execa": "^2.0.3",
+    "execa": "^2.0.4",
     "minimist": "^1.2.0",
     "open": "^6.4.0",
-    "rimraf": "^2.6.3",
-    "source-map-explorer": "^2.0.1"
+    "rimraf": "^3.0.0",
+    "source-map-explorer": "^2.1.0"
   }
 }
