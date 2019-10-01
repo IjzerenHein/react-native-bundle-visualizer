@@ -12,6 +12,8 @@ Sometimes, importing a single javascript library can drastically increase your b
 
 ## Usage
 
+Make sure [npx](https://github.com/npm/npx) is installed and run the following command in your project root
+
 `npx react-native-bundle-visualizer`
 
 ### Or install as a dev-dependency
