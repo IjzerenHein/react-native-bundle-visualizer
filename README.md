@@ -12,24 +12,24 @@ Sometimes, importing a single javascript library can drastically increase your b
 
 ## Usage
 
-*Make sure you have node 8 or higher installed.*
+_Make sure you have node 8 or higher installed._
 
 Depending on your react-native version, install the appropriate package as a dev dependency:
 
-| RN version  | Install react-native-bundle-visualizer |
-|-------------|------------|
-| >= 0.57     | `yarn add --dev react-native-bundle-visualizer` | 
+| RN version  | Install react-native-bundle-visualizer                |
+| ----------- | ----------------------------------------------------- |
+| >= 0.57     | `yarn add --dev react-native-bundle-visualizer@1`     |
 | 0.49 - 0.56 | `yarn add --dev react-native-bundle-visualizer@1.3.5` |
 | <= 0.48     | `yarn add --dev react-native-bundle-visualizer@1.1.0` |
-	
+
 And run it:
 
-	yarn run react-native-bundle-visualizer
+    yarn run react-native-bundle-visualizer
 
-*or when using npm:*
+_or when using npm:_
 
-	npm install --save-dev react-native-bundle-visualizer
-	./node_modules/.bin/react-native-bundle-visualizer
+    npm install --save-dev react-native-bundle-visualizer@1
+    ./node_modules/.bin/react-native-bundle-visualizer
 
 ### Gitignore output files
 
@@ -51,4 +51,3 @@ The sizes reported are an indication rather than the exact byte size in your bun
 ## License
 
 [MIT](./LICENSE.txt)
-
