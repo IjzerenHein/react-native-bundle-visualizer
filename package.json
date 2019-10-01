@@ -1,10 +1,11 @@
 {
   "name": "react-native-bundle-visualizer",
-  "version": "1.4.2",
+  "version": "2.0.3",
   "description": "See what's inside your react-native bundle",
   "author": "IjzerenHein <hrutjes@gmail.com>",
   "keywords": [
     "react-native-bundle-visualizer",
+    "react native bundle size",
     "react-native",
     "react native",
     "bundle",
@@ -12,14 +13,16 @@
     "size",
     "bundle-size"
   ],
-  "bin": "./src/react-native-bundle-visualizer.sh",
+  "bin": "./src/react-native-bundle-visualizer.js",
   "repository": "https://github.com/IjzerenHein/react-native-bundle-visualizer",
   "bugs": "https://github.com/IjzerenHein/react-native-bundle-visualizer/issues",
   "license": "MIT",
   "dependencies": {
-    "haul": "^1.0.0-rc.15",
-    "react-dom": "^16.8.4",
-    "react-hot-loader": "^4.8.0",
-    "webpack-visualizer-plugin": "^0.1.11"
+    "chalk": "^2.4.2",
+    "execa": "^2.0.3",
+    "minimist": "^1.2.0",
+    "open": "^6.4.0",
+    "rimraf": "^2.6.3",
+    "source-map-explorer": "^2.0.1"
   }
 }

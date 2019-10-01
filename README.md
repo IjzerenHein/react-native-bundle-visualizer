@@ -1,12 +1,10 @@
 # react-native-bundle-visualizer
 
-**Version 2 is in the works which uses output from the Metro bundler and has a new User Interface. [Check it out here](https://github.com/IjzerenHein/react-native-bundle-visualizer/tree/v2)**
-
 See what's inside of your react-native bundle 📦
 
-![bundle-visualizer-animation](./react-native-bundle-visualizer.gif)
+![bundle-visualizer-animation](./react-native-bundle-visualizer2.gif)
 
-Uses the awesome [webpack-visualizer](https://github.com/chrisbateman/webpack-visualizer) and [haul](https://github.com/callstack-io/haul) bundler.
+Uses the awesome [source-map-explorer](https://github.com/danvk/source-map-explorer) to visualize the output of the [Metro bundler](https://github.com/facebook/metro).
 
 ## Purpose
 
@@ -14,43 +12,40 @@ Sometimes, importing a single javascript library can drastically increase your b
 
 ## Usage
 
-*Make sure you have node 8 or higher installed.*
+`npx react-native-bundle-visualizer`
 
-Depending on your react-native version, install the appropriate package as a dev dependency:
+### Or install as a dev-dependency
 
-| RN version  | Install react-native-bundle-visualizer                |
-| ----------- | ----------------------------------------------------- |
-| >= 0.57     | `yarn add --dev react-native-bundle-visualizer`       |
-| 0.49 - 0.56 | `yarn add --dev react-native-bundle-visualizer@1.3.5` |
-| <= 0.48     | `yarn add --dev react-native-bundle-visualizer@1.1.0` |
-	
+`yarn add --dev react-native-bundle-visualizer`
+
 And run it:
 
-	yarn run react-native-bundle-visualizer
+    yarn run react-native-bundle-visualizer
 
-*or when using npm:*
+_or when using npm:_
 
-	npm install --save-dev react-native-bundle-visualizer
-	./node_modules/.bin/react-native-bundle-visualizer
+    npm install --save-dev react-native-bundle-visualizer
+    ./node_modules/.bin/react-native-bundle-visualizer
 
-### Gitignore output files
+## Command line arguments
 
-Additionally, add the haul generated files & folders to your `.gitignore` file:
+All command-line arguments are optional. By default a production build will be created for the `ios` platform.
 
-```
-# Haul bundler
-/assets
-stats.html
-index.ios.bundle
-index.ios.bundle.map
-haul-debug.log
-```
+| Option          | Description                                                   | Example                           |
+| --------------- | ------------------------------------------------------------- | --------------------------------- |
+| `platform`      | Platform to build (default is **ios**)                        | `--platform android`              |
+| `dev`           | Dev or production build (default is **false**)                | `--dev false`                     |
+| `entry-file`    | Entry-file (when omitted tries to auto-resolve it)            | `--entry-file ./index.android.js` |
+| `bundle-output` | Output bundle-file (default is **tmp**)                       | `--bundle-output ./myapp.bundle`  |
+| `verbose`       | Dumps additional output to the console (default is **false**) | `--verbose`                       |
+| `reset-cache`   | Removes cached react-native files (default is **false**)      | `--reset-cache`                   |
 
-## Disclaimer
+## Usage with older react-native versions and the Haul bundler
 
-The sizes reported are an indication rather than the exact byte size in your bundle. This is because the Haul packager returns different bundles compared to the react-native Metro bundler. Also, due to limitations in webpack's stats, the "actual" (minified) numbers reported here are approximate, but they should be pretty close.
+As of `react-native-bundle-visualizer` version 2.x, the direct output of the [Metro bundler](https://github.com/facebook/metro) is visualized using the [source-map-explorer](https://github.com/danvk/source-map-explorer).
+
+Prior to version 2, the Haul bundler was used which used Webpack. If you are having problems visualizing the output for older react-native versions, or you want to explicitly use the Haul bundler, [please check out the V1 documentation](https://github.com/IjzerenHein/react-native-bundle-visualizer/tree/v1).
 
 ## License
 
 [MIT](./LICENSE.txt)
-
