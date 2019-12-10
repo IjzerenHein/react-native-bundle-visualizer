@@ -17,6 +17,9 @@
   "repository": "https://github.com/IjzerenHein/react-native-bundle-visualizer",
   "bugs": "https://github.com/IjzerenHein/react-native-bundle-visualizer/issues",
   "license": "MIT",
+  "files": [
+    "src"
+  ],
   "dependencies": {
     "chalk": "^3.0.0",
     "execa": "^3.4.0",
