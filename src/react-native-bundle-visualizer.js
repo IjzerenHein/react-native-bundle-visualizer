@@ -9,11 +9,15 @@ const open = require('open');
 const { explore } = require('source-map-explorer');
 const pkgJSON = JSON.parse(fs.readFileSync('./package.json'));
 
+function sanitizeString(str) {
+  return str.replace(/[^\w]/gi, '');
+}
+
 function getAppName() {
-  if (pkgJSON.name) return pkgJSON.name;
+  if (pkgJSON.name) return sanitizeString(pkgJSON.name);
   try {
     const appJSON = JSON.parse(fs.readFileSync('./app.json'));
-    return appJSON.name || appJSON.expo.name || 'UnknownApp';
+    return sanitizeString(appJSON.name) || sanitizeString(appJSON.expo.name) || 'UnknownApp';
   } catch (err) {
     return 'UnknownApp';
   }
