@@ -27,7 +27,7 @@
   },
   "scripts": {
     "test": "yarn test:rn61 && yarn test:expo35",
-    "test:rn61": "cd test/RN61 && npx ../.. && cd ../..",
-    "test:expo35": "cd test/Expo35 && npx ../.. && cd ../.."
+    "test:rn61": "cd test/RN61 && yarn install && npx ../.. && cd ../..",
+    "test:expo35": "cd test/Expo35 && yarn install && npx ../.. && cd ../.."
   }
 }
