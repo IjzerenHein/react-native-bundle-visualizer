@@ -44,7 +44,7 @@ const bundleOutput =
 const bundleOutputSourceMap = bundleOutput + '.map';
 const bundleOutputExplorerHTML = tmpDir + '/output/explorer.html';
 const format = argv['format'] || 'html';
-const onlyMapped = argv['onlyMapped'] || false;
+const onlyMapped = argv['only-mapped'] || false;
 
 // Make sure the temp dir exists
 if (!fs.existsSync(baseDir)) fs.mkdirSync(baseDir);
