@@ -43,6 +43,8 @@ const bundleOutput =
   argv['bundle-output'] || tmpDir + '/' + platform + '.bundle';
 const bundleOutputSourceMap = bundleOutput + '.map';
 const bundleOutputExplorerHTML = tmpDir + '/output/explorer.html';
+const format = argv['format'] || 'html';
+const onlyMapped = argv['onlyMapped'] || false;
 
 // Make sure the temp dir exists
 if (!fs.existsSync(baseDir)) fs.mkdirSync(baseDir);
@@ -116,8 +118,9 @@ bundlePromise
           map: bundleOutputSourceMap
         },
         {
+          onlyMapped,
           output: {
-            format: 'html',
+            format,
             filename: bundleOutputExplorerHTML
           }
         }

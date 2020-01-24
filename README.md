@@ -41,6 +41,8 @@ All command-line arguments are optional. By default a production build will be c
 | `bundle-output` | Output bundle-file (default is **tmp**)                       | `--bundle-output ./myapp.bundle`  |
 | `verbose`       | Dumps additional output to the console (default is **false**) | `--verbose`                       |
 | `reset-cache`   | Removes cached react-native files (default is **false**)      | `--reset-cache`                   |
+| `format`        | source-map-explorer output format (default is **false**)      | `--format json`                   |
+| `only-mapped`   | source-map-explorer onlyMapped (default is **false**)         | `--only-mapped true`              |
 
 ## Usage with older react-native versions and the Haul bundler
 
