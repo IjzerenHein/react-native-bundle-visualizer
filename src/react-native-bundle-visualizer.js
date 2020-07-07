@@ -49,6 +49,7 @@ const bundleOutput =
 const bundleOutputSourceMap = bundleOutput + '.map';
 const format = argv.format || 'html';
 const bundleOutputExplorerFile = tmpDir + '/output/explorer.' + format;
+const onlyMapped = !!argv['only-mapped'] || false;
 
 // Make sure the temp dir exists
 if (!fs.existsSync(baseDir)) fs.mkdirSync(baseDir);
@@ -128,6 +129,7 @@ bundlePromise
           map: bundleOutputSourceMap,
         },
         {
+          onlyMapped,
           output: {
             format,
             filename: bundleOutputExplorerFile,

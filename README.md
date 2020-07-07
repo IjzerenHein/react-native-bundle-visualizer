@@ -45,6 +45,7 @@ All command-line arguments are optional. By default a production build will be c
 | `entry-file`    | Entry-file (when omitted tries to auto-resolve it)                                                                                                            | `--entry-file ./index.android.js` |
 | `bundle-output` | Output bundle-file (default is **tmp**)                                                                                                                       | `--bundle-output ./myapp.bundle`  |
 | `format`        | Output format **html**, **json** or **tsv** (default is **html**) (see [source-map-explorer options](https://github.com/danvk/source-map-explorer#options))   | `--format json`                   |
+| `only-mapped`   | Exclude "unmapped" bytes from the output (default is **false**). This will result in total counts less than the file size.                                    | `--only-mapped`                   |
 | `verbose`       | Dumps additional output to the console (default is **false**)                                                                                                 | `--verbose`                       |
 | `reset-cache`   | Removes cached react-native files (default is **false**)                                                                                                      | `--reset-cache`                   |
 
