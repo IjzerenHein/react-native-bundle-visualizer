@@ -47,7 +47,8 @@ const resetCache = argv['reset-cache'] || false;
 const bundleOutput =
   argv['bundle-output'] || tmpDir + '/' + platform + '.bundle';
 const bundleOutputSourceMap = bundleOutput + '.map';
-const bundleOutputExplorerHTML = tmpDir + '/output/explorer.html';
+const format = argv.format || 'html';
+const bundleOutputExplorerFile = tmpDir + '/output/explorer.' + format;
 
 // Make sure the temp dir exists
 if (!fs.existsSync(baseDir)) fs.mkdirSync(baseDir);
@@ -128,14 +129,14 @@ bundlePromise
         },
         {
           output: {
-            format: 'html',
-            filename: bundleOutputExplorerHTML,
+            format,
+            filename: bundleOutputExplorerFile,
           },
         }
       );
     }
 
-    // Log info and open html file
+    // Log info and open output file
   )
   .then((result) => {
     if (verbose) {
@@ -159,6 +160,6 @@ bundlePromise
       });
     }
 
-    // Open html file
-    return open(bundleOutputExplorerHTML);
+    // Open output file
+    return open(bundleOutputExplorerFile);
   });
