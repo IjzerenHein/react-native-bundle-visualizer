@@ -17,7 +17,11 @@ function getAppName() {
   if (pkgJSON.name) return sanitizeString(pkgJSON.name);
   try {
     const appJSON = JSON.parse(fs.readFileSync('./app.json'));
-    return sanitizeString(appJSON.name) || sanitizeString(appJSON.expo.name) || 'UnknownApp';
+    return (
+      sanitizeString(appJSON.name) ||
+      sanitizeString(appJSON.expo.name) ||
+      'UnknownApp'
+    );
   } catch (err) {
     return 'UnknownApp';
   }
@@ -68,7 +72,7 @@ const commands = [
   '--bundle-output',
   bundleOutput,
   '--sourcemap-output',
-  bundleOutputSourceMap
+  bundleOutputSourceMap,
 ];
 if (resetCache) {
   commands.push('--reset-cache');
@@ -113,23 +117,23 @@ bundlePromise
       return explore(
         {
           code: bundleOutput,
-          map: bundleOutputSourceMap
+          map: bundleOutputSourceMap,
         },
         {
           output: {
             format: 'html',
-            filename: bundleOutputExplorerHTML
-          }
+            filename: bundleOutputExplorerHTML,
+          },
         }
       );
     }
 
     // Log info and open html file
   )
-  .then(result => {
+  .then((result) => {
     if (verbose) {
-      result.bundles.forEach(bundle => {
-        Object.keys(bundle.files).forEach(file => {
+      result.bundles.forEach((bundle) => {
+        Object.keys(bundle.files).forEach((file) => {
           console.log(
             chalk.green(file + ', size: ' + bundle.files[file] + ' bytes')
           );
@@ -139,7 +143,7 @@ bundlePromise
 
     // Log any errors
     if (result.errors) {
-      result.errors.forEach(error => {
+      result.errors.forEach((error) => {
         if (error.isWarning) {
           console.log(chalk.yellow.bold(error.message));
         } else {
