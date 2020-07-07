@@ -30,8 +30,8 @@
     "source-map-explorer": "^2.4.2"
   },
   "scripts": {
-    "test": "yarn test:rn61 && yarn test:expo35",
-    "test:rn61": "cd test/RN61 && yarn install && npx ../.. && cd ../..",
-    "test:expo35": "cd test/Expo35 && yarn install && npx ../.. --expo managed && cd ../.."
+    "test": "yarn test:rn && yarn test:expo",
+    "test:rn": "cd test/RN61 && yarn install && npx ../.. && cd ../..",
+    "test:expo": "cd test/Expo35 && yarn install && npx ../.. --expo managed && cd ../.."
   }
 }
