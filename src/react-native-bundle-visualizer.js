@@ -40,6 +40,7 @@ const baseDir = os.tmpdir() + '/react-native-bundle-visualizer';
 const tmpDir = baseDir + '/' + getAppName();
 const entryFile = argv['entry-file'] || getEntryPoint();
 const platform = argv.platform || 'ios';
+const expoTarget = argv.expo || '';
 const dev = argv.dev || false;
 const verbose = argv.verbose || false;
 const resetCache = argv['reset-cache'] || false;
@@ -78,6 +79,12 @@ if (resetCache) {
   commands.push('--reset-cache');
   commands.push(resetCache);
 }
+if (expoTarget) {
+  process.env.EXPO_TARGET = expoTarget;
+  commands.push('--config');
+  commands.push(__dirname + '/expo-metro.config.js');
+}
+
 const bundlePromise = execa('./node_modules/.bin/react-native', commands);
 bundlePromise.stdout.pipe(process.stdout);
 

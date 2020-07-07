@@ -16,6 +16,10 @@ Make sure [npx](https://github.com/npm/npx) is installed and run the following c
 
 `npx react-native-bundle-visualizer`
 
+And when using Expo:
+
+`npx react-native-bundle-visualizer --expo managed`
+
 ### Or install as a dev-dependency
 
 `yarn add --dev react-native-bundle-visualizer`
@@ -33,14 +37,15 @@ _or when using npm:_
 
 All command-line arguments are optional. By default a production build will be created for the `ios` platform.
 
-| Option          | Description                                                   | Example                           |
-| --------------- | ------------------------------------------------------------- | --------------------------------- |
-| `platform`      | Platform to build (default is **ios**)                        | `--platform android`              |
-| `dev`           | Dev or production build (default is **false**)                | `--dev false`                     |
-| `entry-file`    | Entry-file (when omitted tries to auto-resolve it)            | `--entry-file ./index.android.js` |
-| `bundle-output` | Output bundle-file (default is **tmp**)                       | `--bundle-output ./myapp.bundle`  |
-| `verbose`       | Dumps additional output to the console (default is **false**) | `--verbose`                       |
-| `reset-cache`   | Removes cached react-native files (default is **false**)      | `--reset-cache`                   |
+| Option          | Description                                                                                                                                                   | Example                           |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| `platform`      | Platform to build (default is **ios**)                                                                                                                        | `--platform android`              |
+| `expo`          | Expo target, **managed** or **bare**. This ensures that the project is bundled with expo settings and that `.expo` file extensions are handled appropriately. | `--expo bare`                     |
+| `dev`           | Dev or production build (default is **false**)                                                                                                                | `--dev false`                     |
+| `entry-file`    | Entry-file (when omitted tries to auto-resolve it)                                                                                                            | `--entry-file ./index.android.js` |
+| `bundle-output` | Output bundle-file (default is **tmp**)                                                                                                                       | `--bundle-output ./myapp.bundle`  |
+| `verbose`       | Dumps additional output to the console (default is **false**)                                                                                                 | `--verbose`                       |
+| `reset-cache`   | Removes cached react-native files (default is **false**)                                                                                                      | `--reset-cache`                   |
 
 ## Usage with older react-native versions and the Haul bundler
 
