@@ -10,7 +10,7 @@ const { explore } = require('source-map-explorer');
 const pkgJSON = JSON.parse(fs.readFileSync('./package.json'));
 
 function sanitizeString(str) {
-  return str.replace(/[^\w]/gi, '');
+  return str ? str.replace(/[^\w]/gi, '') : str;
 }
 
 function getAppName() {
