@@ -24,9 +24,9 @@
     "@expo/metro-config": "^0.1.15",
     "chalk": "^4.1.0",
     "execa": "^4.0.2",
+    "fs-extra": "^10.0.0",
     "minimist": "^1.2.5",
     "open": "^7.0.4",
-    "rimraf": "^3.0.2",
     "source-map-explorer": "^2.4.2"
   },
   "scripts": {

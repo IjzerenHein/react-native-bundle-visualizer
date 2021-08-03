@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 const chalk = require('chalk');
-const fs = require('fs');
+const fs = require('fs-extra');
 const os = require('os');
+const path = require('path');
 const argv = require('minimist')(process.argv.slice(2));
 const execa = require('execa');
-const rimraf = require('rimraf');
 const open = require('open');
 const { explore } = require('source-map-explorer');
 const pkgJSON = JSON.parse(fs.readFileSync('./package.json'));
@@ -36,8 +36,9 @@ function getEntryPoint() {
 }
 
 // Get (default) arguments
-const baseDir = os.tmpdir() + '/react-native-bundle-visualizer';
-const tmpDir = baseDir + '/' + getAppName();
+const baseDir = path.join(os.tmpdir(), 'react-native-bundle-visualizer');
+const tmpDir = path.join(baseDir, getAppName());
+const outDir = path.join(tmpDir, 'output');
 const entryFile = argv['entry-file'] || getEntryPoint();
 const platform = argv.platform || 'ios';
 const expoTarget = argv.expo || '';
@@ -45,15 +46,15 @@ const dev = argv.dev || false;
 const verbose = argv.verbose || false;
 const resetCache = argv['reset-cache'] || false;
 const bundleOutput =
-  argv['bundle-output'] || tmpDir + '/' + platform + '.bundle';
+  argv['bundle-output'] || path.join(tmpDir, platform + '.bundle');
 const bundleOutputSourceMap = bundleOutput + '.map';
 const format = argv.format || 'html';
-const bundleOutputExplorerFile = tmpDir + '/output/explorer.' + format;
+const bundleOutputExplorerFile = path.join(outDir, 'explorer.' + format);
 const onlyMapped = !!argv['only-mapped'] || false;
 
 // Make sure the temp dir exists
-if (!fs.existsSync(baseDir)) fs.mkdirSync(baseDir);
-if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir);
+fs.ensureDirSync(baseDir);
+fs.ensureDirSync(tmpDir);
 
 // Try to obtain the previous file size
 let prevBundleSize;
@@ -84,7 +85,7 @@ if (resetCache) {
 if (expoTarget) {
   process.env.EXPO_TARGET = expoTarget;
   commands.push('--config');
-  commands.push(__dirname + '/expo-metro.config.js');
+  commands.push(path.join(__dirname, 'expo-metro.config.js'));
 }
 
 const bundlePromise = execa('./node_modules/.bin/react-native', commands);
@@ -122,7 +123,7 @@ bundlePromise
       );
 
       // Make sure the explorer output dir is removed
-      if (fs.existsSync(tmpDir + '/output')) rimraf.sync(tmpDir + '/output');
+      fs.removeSync(outDir);
       return explore(
         {
           code: bundleOutput,
