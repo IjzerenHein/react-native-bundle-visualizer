@@ -32,8 +32,8 @@
   "scripts": {
     "test": "yarn test:rn && yarn test:expo",
     "test:rn": "cd test/RN61 && yarn install && npx ../.. && cd ../..",
-    "test:expo": "yarn test:expo:35 && yarn test:expo:42",
-    "test:expo:35": "cd test/Expo35 && yarn install && npx ../.. --expo managed && cd ../..",
+    "test:expo": "yarn test:expo:36 && yarn test:expo:42",
+    "test:expo:36": "cd test/Expo36 && yarn install && npx ../.. --expo managed && cd ../..",
     "test:expo:42": "cd test/Expo42 && yarn install && npx ../.. --expo managed && cd ../.."
   }
 }
