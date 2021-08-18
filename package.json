@@ -21,7 +21,7 @@
     "src"
   ],
   "dependencies": {
-    "@expo/metro-config": "0.1.15",
+    "@expo/metro-config": "^0.1.70",
     "chalk": "^4.1.2",
     "execa": "^5.1.1",
     "fs-extra": "^10.0.0",
