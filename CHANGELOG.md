@@ -4,7 +4,7 @@
 
 ### Bug Fixes
 
-- Fixes `@expo/metro-config` resolving to old dependencies, causing problems with newer Expo SDK versions (removes this depenendency entirely).
+- Fixes `@expo/metro-config` resolving to old dependencies, causing problems with newer Expo SDK versions (removes this dependency entirely). See [the discussion here](https://github.com/IjzerenHein/react-native-bundle-visualizer/pull/64).
 
 ### Breaking changes
 
