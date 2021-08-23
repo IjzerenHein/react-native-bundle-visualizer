@@ -34,8 +34,7 @@
     "test:rn": "yarn test:rn:61 && yarn test:rn:64",
     "test:rn:61": "cd test/RN61 && yarn install && npx ../.. && cd ../..",
     "test:rn:64": "cd test/RN64 && yarn install && npx ../.. && cd ../..",
-    "test:expo": "yarn test:expo:36 && yarn test:expo:42",
-    "test:expo:36": "cd test/Expo36 && yarn install && npx ../.. --expo managed && cd ../..",
+    "test:expo": "yarn test:expo:42",
     "test:expo:42": "cd test/Expo42 && yarn install && npx ../.. && cd ../.."
   }
 }
