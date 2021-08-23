@@ -16,10 +16,6 @@ Make sure [npx](https://github.com/npm/npx) is installed and run the following c
 
 `npx react-native-bundle-visualizer`
 
-And when using Expo SDK 40 or lower. Learn more: [Expo extensions](http://expo.fyi/expo-extension-migration).
-
-`npx react-native-bundle-visualizer --expo managed`
-
 ### Or install as a dev-dependency
 
 ```sh
@@ -45,7 +41,6 @@ All command-line arguments are optional. By default a production build will be c
 | Option          | Description                                                                                                                                                  | Example                          |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
 | `platform`      | Platform to build (default is **ios**)                                                                                                                       | `--platform ios`                 |
-| `expo`          | (Deprecated in SDK 41+) Expo target, **managed** or **bare**. Ensures that the project is bundled with expo settings and that `.expo.*` extensions are used. | `--expo bare`                    |
 | `dev`           | Dev or production build (default is **false**)                                                                                                               | `--dev false`                    |
 | `entry-file`    | Entry-file (when omitted tries to auto-resolve it)                                                                                                           | `--entry-file ./index.ios.js`    |
 | `bundle-output` | Output bundle-file (default is **tmp**)                                                                                                                      | `--bundle-output ./myapp.bundle` |
@@ -56,11 +51,15 @@ All command-line arguments are optional. By default a production build will be c
 
 [smeo]: https://github.com/danvk/source-map-explorer#options
 
-## Usage with older react-native versions and the Haul bundler
+> The `--expo` command is no longer needed for Expo SDK 41 or higher; and has been removed. Use [react-native-bundle-visualizer@2](https://github.com/IjzerenHein/react-native-bundle-visualizer/tree/v2) when targetting Expo SDK 40 or lower.
 
-As of `react-native-bundle-visualizer` version 2.x, the direct output of the [Metro bundler](https://github.com/facebook/metro) is visualized using the [source-map-explorer](https://github.com/danvk/source-map-explorer).
+## Version compatibility
 
-Prior to version 2, the Haul bundler was used which used Webpack. If you are having problems visualizing the output for older react-native versions, or you want to explicitly use the Haul bundler, [please check out the V1 documentation](https://github.com/IjzerenHein/react-native-bundle-visualizer/tree/v1).
+| Version                                                                       | Comments                                                                                                                                                              |
+| ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 3.x                                                                           | Compatible with React-Native CLI bootstrapped projects and Expo SDK 41 or higher. | 
+| [2.x](https://github.com/IjzerenHein/react-native-bundle-visualizer/tree/v2) | Compatible with React-Native CLI bootstrapped projects and Expo SDK 40 or earlier.                                                                                                           |
+| [1.x](https://github.com/IjzerenHein/react-native-bundle-visualizer/tree/v1) | Uses the [Haul bundler](https://github.com/callstack/haul) instead instead of the Metro output. | 
 
 ## License
 

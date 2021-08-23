@@ -1,6 +1,6 @@
 {
   "name": "react-native-bundle-visualizer",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "See what's inside your react-native bundle",
   "author": "IjzerenHein <hrutjes@gmail.com>",
   "keywords": [
@@ -21,7 +21,6 @@
     "src"
   ],
   "dependencies": {
-    "@expo/metro-config": "0.1.15",
     "chalk": "^4.1.2",
     "execa": "^5.1.1",
     "fs-extra": "^10.0.0",
@@ -34,8 +33,7 @@
     "test:rn": "yarn test:rn:61 && yarn test:rn:64",
     "test:rn:61": "cd test/RN61 && yarn install && npx ../.. && cd ../..",
     "test:rn:64": "cd test/RN64 && yarn install && npx ../.. && cd ../..",
-    "test:expo": "yarn test:expo:36 && yarn test:expo:42",
-    "test:expo:36": "cd test/Expo36 && yarn install && npx ../.. --expo managed && cd ../..",
+    "test:expo": "yarn test:expo:42",
     "test:expo:42": "cd test/Expo42 && yarn install && npx ../.. && cd ../.."
   }
 }
