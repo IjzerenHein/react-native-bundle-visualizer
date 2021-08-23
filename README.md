@@ -14,28 +14,28 @@ Sometimes, importing a single javascript library can drastically increase your b
 
 Make sure [npx](https://github.com/npm/npx) is installed and run the following command in your project root
 
-`npx react-native-bundle-visualizer`
+`npx react-native-bundle-visualizer@2`
 
 And when using Expo SDK 40 or lower. Learn more: [Expo extensions](http://expo.fyi/expo-extension-migration).
 
-`npx react-native-bundle-visualizer --expo managed`
+`npx react-native-bundle-visualizer@2 --expo managed`
 
 ### Or install as a dev-dependency
 
 ```sh
-yarn add --dev react-native-bundle-visualizer
+yarn add --dev react-native-bundle-visualizer@2
 ```
 
 And run it:
 
 ```
-yarn run react-native-bundle-visualizer
+yarn run react-native-bundle-visualizer@2
 ```
 
 _or when using npm:_
 
 ```
-npm install --save-dev react-native-bundle-visualizer ./node_modules/.bin/react-native-bundle-visualizer
+npm install --save-dev react-native-bundle-visualizer@2 ./node_modules/.bin/react-native-bundle-visualizer
 ```
 
 ## Command line arguments
