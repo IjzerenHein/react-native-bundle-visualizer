@@ -91,8 +91,9 @@ if (expoTargetDeprecated) {
     )
   );
 }
-
-const bundlePromise = execa('./node_modules/.bin/react-native', commands);
+const reactNativeDir = path.dirname(require.resolve('react-native/package.json'))
+const reactNativeBin = path.join(reactNativeDir, './cli.js')
+const bundlePromise = execa(reactNativeBin, commands);
 bundlePromise.stdout.pipe(process.stdout);
 
 // Upon bundle completion, run `source-map-explorer`
