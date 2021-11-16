@@ -35,6 +35,24 @@ function getEntryPoint() {
   return entry;
 }
 
+function getReactNativeBin() {
+  const localBin = './node_modules/.bin/react-native';
+  if (fs.existsSync(localBin)) return localBin;
+  try {
+    const reactNativeDir = path.dirname(
+      require.resolve('react-native/package.json')
+    );
+    return path.join(reactNativeDir, './cli.js');
+  } catch (e) {
+    console.error(
+      chalk.red.bold(
+        `React-native binary could not be located. Please report this issue with environment info to:\n`
+      ),
+      chalk.blue.bold(`-> ${require('../package.json').bugs}`)
+    );
+  }
+}
+
 // Get (default) arguments
 const baseDir = path.join(os.tmpdir(), 'react-native-bundle-visualizer');
 const tmpDir = path.join(baseDir, getAppName());
@@ -92,7 +110,8 @@ if (expoTargetDeprecated) {
   );
 }
 
-const bundlePromise = execa('./node_modules/.bin/react-native', commands);
+const reactNativeBin = getReactNativeBin();
+const bundlePromise = execa(reactNativeBin, commands);
 bundlePromise.stdout.pipe(process.stdout);
 
 // Upon bundle completion, run `source-map-explorer`
