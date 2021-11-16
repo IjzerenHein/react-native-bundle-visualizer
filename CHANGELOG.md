@@ -1,5 +1,11 @@
 # [Unreleased]
 
+# [3.1.0](https://github.com/IjzerenHein/react-native-bundle-visualizer/compare/v3.0.0...v3.1.0) (2021-10-16)
+
+### Features
+
+- Add support for Yarn monorepos by using `require.resolve` to locate the react-native cli. ([thank you @braden1996](https://github.com/IjzerenHein/react-native-bundle-visualizer/pull/69))
+
 # [3.0.0](https://github.com/IjzerenHein/react-native-bundle-visualizer/compare/v2.3.0...v3.0.0) (2021-08-23)
 
 ### Bug Fixes
