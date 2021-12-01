@@ -1,3 +1,9 @@
+# LOOKING FOR NEW MAINTAINER / HOME
+
+This repository is looking for a new maintainer and home. 🏠
+Please contact me [here](mailto:hrutjes@gmail,com) when you are interested in continuing development or know a new place.
+This repository will be archived automatically in Q1 of 2022.
+
 # react-native-bundle-visualizer
 
 See what's inside of your react-native bundle 📦
