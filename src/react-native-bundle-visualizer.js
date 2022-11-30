@@ -167,9 +167,9 @@ bundlePromise
   .then((result) => {
     if (verbose) {
       result.bundles.forEach((bundle) => {
-        Object.keys(bundle.files).forEach((file) => {
+        Object.entries(bundle.files).forEach(([file, stats]) => {
           console.log(
-            chalk.green(file + ', size: ' + bundle.files[file]?.size + ' bytes')
+            chalk.green(file + ', size: ' + stats.size + ' bytes')
           );
         });
       });
