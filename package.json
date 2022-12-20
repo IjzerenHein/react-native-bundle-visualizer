@@ -26,7 +26,7 @@
     "fs-extra": "^10.0.0",
     "minimist": "^1.2.5",
     "open": "^8.4.0",
-    "source-map-explorer": "^2.5.2"
+    "source-map-explorer": "^2.5.3"
   },
   "scripts": {
     "test": "yarn test:rn && yarn test:expo",
