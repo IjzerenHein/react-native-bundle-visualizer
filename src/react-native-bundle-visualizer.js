@@ -169,7 +169,7 @@ bundlePromise
       result.bundles.forEach((bundle) => {
         Object.keys(bundle.files).forEach((file) => {
           console.log(
-            chalk.green(file + ', size: ' + bundle.files[file]?.size + ' bytes')
+            chalk.green(file + ', size: ' + bundle.files[file].size + ' bytes')
           );
         });
       });
