@@ -1,4 +1,8 @@
-# [Unreleased]
+# [3.1.2](https://github.com/IjzerenHein/react-native-bundle-visualizer/releases/tag/v3.1.2) (2023-01-12)
+
+### Bug Fixes
+- Fixes [Verbose gives size [object Object]](https://github.com/IjzerenHein/react-native-bundle-visualizer/issues/73) -- Thanks to [omerg](https://github.com/omerg)
+- Fixes [This error originated either by throwing inside of an async function...](https://github.com/IjzerenHein/react-native-bundle-visualizer/issues/112) by upgrading the `source-map-explorer` dependency.
 
 # [3.1.0](https://github.com/IjzerenHein/react-native-bundle-visualizer/compare/v3.0.0...v3.1.0) (2021-10-16)
 
