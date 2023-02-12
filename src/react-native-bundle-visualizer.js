@@ -59,7 +59,7 @@ const tmpDir = path.join(baseDir, getAppName());
 const outDir = path.join(tmpDir, 'output');
 const entryFile = argv['entry-file'] || getEntryPoint();
 const platform = argv.platform || 'ios';
-const expoTargetDeprecated = argv.expo || '';
+const isExpo = argv.expo || '';
 const dev = argv.dev || false;
 const verbose = argv.verbose || false;
 const resetCache = argv['reset-cache'] || false;
@@ -95,19 +95,12 @@ const commands = [
   bundleOutput,
   '--sourcemap-output',
   bundleOutputSourceMap,
+  '--minify',
+  isExpo
 ];
 if (resetCache) {
   commands.push('--reset-cache');
   commands.push(resetCache);
-}
-
-// Warn about `--expo` deprecation
-if (expoTargetDeprecated) {
-  console.error(
-    chalk.red.bold(
-      'The "--expo" command is no longer needed for Expo SDK 41 or higher. When using Expo SDK 40 or lower, please use `react-native-bundle-visualizer@2`.'
-    )
-  );
 }
 
 const reactNativeBin = getReactNativeBin();
@@ -188,4 +181,7 @@ bundlePromise
 
     // Open output file
     return open(bundleOutputExplorerFile);
-  });
+  }).catch(error => console.log(
+    chalk.red('=== error ==='),
+    error
+  ));

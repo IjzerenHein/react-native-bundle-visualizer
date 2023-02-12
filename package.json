@@ -31,6 +31,6 @@
   "scripts": {
     "test": "yarn test:rn && yarn test:expo",
     "test:rn": "cd test/RN64 && yarn install && npx ../.. && cd ../..",
-    "test:expo": "cd test/Expo42 && yarn install && npx ../.. && cd ../.."
+    "test:expo": "cd test/Expo42 && yarn install && npx ../.. --expo=true && cd ../.."
   }
 }
