@@ -1,3 +1,8 @@
+# [3.1.3](https://github.com/IjzerenHein/react-native-bundle-visualizer/releases/tag/v3.1.3) (2023-02-13)
+
+### Bug Fixes
+- Fixes [triggerUncaughtException with react-native 0.71.2](https://github.com/IjzerenHein/react-native-bundle-visualizer/issues/116) by setting minify to false [here]( https://github.com/IjzerenHein/react-native-bundle-visualizer/pull/117)
+
 # [3.1.2](https://github.com/IjzerenHein/react-native-bundle-visualizer/releases/tag/v3.1.2) (2023-01-12)
 
 ### Bug Fixes
