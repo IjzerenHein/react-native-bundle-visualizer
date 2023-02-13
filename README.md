@@ -48,10 +48,11 @@ All command-line arguments are optional. By default a production build will be c
 | `only-mapped`   | Exclude "unmapped" bytes from the output (default is **false**). This will result in total counts less than the file size.                                   | `--only-mapped`                  |
 | `verbose`       | Dumps additional output to the console (default is **false**)                                                                                                | `--verbose`                      |
 | `reset-cache`   | Removes cached react-native files (default is **false**)                                                                                                     | `--reset-cache`                  |
+| `--expo`   | Set this to true/ false based on whether using expo or not. For eg, set `--expo true` when using expo. Not required to pass this for react-native cli. (default is **false**)                                                                                                     | `--expo false`                  |
 
 [smeo]: https://github.com/danvk/source-map-explorer#options
 
-> The `--expo` command is no longer needed for Expo SDK 41 or higher; and has been removed. Use [react-native-bundle-visualizer@2](https://github.com/IjzerenHein/react-native-bundle-visualizer/tree/v2) when targetting Expo SDK 40 or lower.
+>Use [react-native-bundle-visualizer@2](https://github.com/IjzerenHein/react-native-bundle-visualizer/tree/v2) when targetting Expo SDK 40 or lower.
 
 ## Version compatibility
 
