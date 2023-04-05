@@ -62,6 +62,11 @@ All command-line arguments are optional. By default a production build will be c
 | [2.x](https://github.com/IjzerenHein/react-native-bundle-visualizer/tree/v2) | Compatible with React-Native CLI bootstrapped projects and Expo SDK 40 or earlier.                                                                                                           |
 | [1.x](https://github.com/IjzerenHein/react-native-bundle-visualizer/tree/v1) | Uses the [Haul bundler](https://github.com/callstack/haul) instead instead of the Metro output. | 
 
+## Trouble Shooting
+
+If you encounter following error, try to use [v3.1.3](https://github.com/IjzerenHein/react-native-bundle-visualizer/releases/tag/v3.1.3)
+> 'Error parsing mappings (code 1): the mappings contained a negative line, column, source index, or name index'
+
 ## License
 
 [MIT](./LICENSE.txt)
