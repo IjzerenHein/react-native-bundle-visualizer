@@ -59,7 +59,6 @@ const tmpDir = path.join(baseDir, getAppName());
 const outDir = path.join(tmpDir, 'output');
 const entryFile = argv['entry-file'] || getEntryPoint();
 const platform = argv.platform || 'ios';
-const isExpo = argv.expo || false;
 const dev = argv.dev || false;
 const verbose = argv.verbose || false;
 const resetCache = argv['reset-cache'] || false;
@@ -94,9 +93,7 @@ const commands = [
   '--bundle-output',
   bundleOutput,
   '--sourcemap-output',
-  bundleOutputSourceMap,
-  '--minify',
-  isExpo
+  bundleOutputSourceMap
 ];
 if (resetCache) {
   commands.push('--reset-cache');
